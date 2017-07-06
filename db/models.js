@@ -29,8 +29,8 @@ const CaptionSchema = new mongoose.Schema (
   }
 );
 
-const Ramen = mongoose.model("Ramen", RamenSchema);
-const Caption = mongoose.model("Caption", CaptionSchema);
+const Ramen = conn.model("Ramen", RamenSchema);
+const Caption = conn.model("Caption", CaptionSchema);
 
 module.exports = {
   Ramen,
