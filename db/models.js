@@ -7,6 +7,7 @@ const RamenSchema = new mongoose.Schema (
     image_url: String,
     taste: Number,
     aroma: Number,
+    noodle_texture: String,
     overall_score: Number,
     summary: String,
     comments: [CommentSchema]
@@ -14,16 +15,24 @@ const RamenSchema = new mongoose.Schema (
   {
     timestamps: true
   }
-)
+);
 
-const CommentSchema = new mongoose.Schema (
+const CaptionSchema = new mongoose.Schema (
   {
     author: String,
     comment: String,
     taste: Number,
     aroma: Number,
-    overall_score: Number,
+    overall_score: Number
   }, {
     timestamps: true
   }
-)
+);
+
+const Ramen = mongoose.model("Ramen", RamenSchema);
+const Caption = mongoose.model("Caption", CaptionSchema);
+
+module.exports = {
+  Ramen,
+  Caption
+}
